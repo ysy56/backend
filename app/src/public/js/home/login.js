@@ -12,8 +12,12 @@ function login() {
         pw: pw.value,
     };
 
-    console.log(req);
+    // 요청 또는 전달
+    fetch('/login', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(req),
+    })
 };
-
-console.log(id.value);
-console.log('hello');
