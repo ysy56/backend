@@ -21,5 +21,11 @@ function login() {
         body: JSON.stringify(req),
     })
     .then((res) => res.json())
-    .then((res) => console.log(res));
+    .then((res) => {
+        if (res.success) { // 로그인 성공시 메인화면으로...
+            location.href = '/';
+        } else { // 로그인 실패시 메세지 표시
+            alert(res.msg);
+        }
+    });
 };
