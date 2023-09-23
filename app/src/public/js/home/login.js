@@ -27,8 +27,5 @@ function login() {
         } else { // 로그인 실패시 메세지 표시
             alert(res.msg);
         }
-    })
-    .catch((err) => {
-        console.error('회원가입 중 에러 발생');
     });
 };
