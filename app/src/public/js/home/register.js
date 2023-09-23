@@ -1,15 +1,19 @@
 "use strict";
 
 const id = document.querySelector('#id'),
+    name = document.querySelector('#name'),
     pw = document.querySelector('#pw'),
-    loginBtn = document.querySelector('#button');
+    confirmPw = document.querySelector('#confirm-pw'),
+    registerBtn = document.querySelector('#button');
 
-loginBtn.addEventListener('click', login);
+registerBtn.addEventListener('click', login);
 
 function login() {
     const req = {
         id: id.value,
+        name: name.value,
         pw: pw.value,
+        confirmPw: confirmPw.value
     };
 
     // 요청 또는 전달
@@ -27,8 +31,5 @@ function login() {
         } else { // 로그인 실패시 메세지 표시
             alert(res.msg);
         }
-    })
-    .catch((err) => {
-        console.error('회원가입 중 에러 발생');
     });
 };
